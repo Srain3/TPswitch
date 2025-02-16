@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent
 
 object TPevent : Listener {
     private var tpcmd = """/tp|/Tp|/tP|/TP""".toRegex()
-    private var playerName = """[a-zA-Z0-9_]*[a-zA-Z0-9_]""".toRegex()
+    private var playerName = """\.?[a-zA-Z0-9_]*[a-zA-Z0-9_]""".toRegex()
     private lateinit var main1 : TPswitch
     fun playerCmdEvent(main: TPswitch){
         main1 = main

@@ -141,7 +141,7 @@ class TPswitch : JavaPlugin() {
                 }
                 2 -> { //Black|White to setting
                     if (hasPerm(sender, command.permission.toString())) {
-                        val name = """[a-zA-Z0-9_]*[a-zA-Z0-9_]""".toRegex()
+                        val name = """\.?[a-zA-Z0-9_]*[a-zA-Z0-9_]""".toRegex()
                         when {
                             args[0] == "ok" -> { //to add WhiteList
                                 if (name.matches(args[1])) {

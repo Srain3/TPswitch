@@ -1,0 +1,26 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.1.0'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+group 'com.github.srain3'
+version '0.1.7'
+
+repositories {
+    mavenCentral()
+    maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.1.0'
+    compileOnly "org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT"
+    compileOnly 'net.luckperms:api:5.4'
+}
+
+compileKotlin {
+    compilerOptions.jvmTarget = JvmTarget.JVM_21
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
